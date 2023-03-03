@@ -1,3 +1,5 @@
+drop database if exists bookstore;
+
 create database if not exists bookstore;
 
 use bookstore;
@@ -10,6 +12,12 @@ CREATE TABLE IF NOT EXISTS users (
     phone varchar(255)
 );
 
+CREATE TABLE IF NOT EXISTS admins (
+    Email varchar(255) primary key,
+    Passwd varchar(255),
+    Address text, 
+    phone varchar(255)
+);
 
 
 CREATE TABLE IF NOT EXISTS orders (
@@ -37,7 +45,11 @@ insert into users values('abcd@uwaterloo.ca', 'abcde', '123 university ave', '88
 insert into users values('gggg@uwaterloo.ca', 'abcde', '123 university ave', '1212233344');
 insert into users values('lobe@uwaterloo.ca', 'abcde', '123 university ave', '2223333322');
 
+insert into admins values('admin@uwaterloo.ca', 'abcde', '123 university ave', '12221111222');
+
 insert into books values(0, 'java intro 1', 'Mickey Davis', 22, 30);
 insert into books values(1, 'java intro 2', 'Mickey Davis', 22, 30);
 insert into books values(2, 'java intro 3', 'Mickey Davis', 22, 30);
 insert into books values(3, 'java intro 4', 'Mickey Davis', 22, 30);
+
+
