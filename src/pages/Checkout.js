@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Checkout = () => {
+const Checkout = () => {
   return (
     <main>
       <Wrapper>
@@ -12,3 +12,4 @@ export const Checkout = () => {
 };
 
 const Wrapper = styled.div``;
+export default Checkout;

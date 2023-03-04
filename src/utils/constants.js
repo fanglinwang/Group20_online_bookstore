@@ -10,8 +10,8 @@ export const links = [
   },
   {
     id: 2,
-    text: "about",
-    url: "/about",
+    text: "textbooks",
+    url: "/textbooks",
   },
   {
     id: 3,
@@ -44,3 +44,7 @@ export const books = [
     id: 3,
   },
 ];
+
+export const products_url = "https://course-api.com/react-store-products";
+
+export const single_product_url = `https://course-api.com/react-store-single-product?id=`;

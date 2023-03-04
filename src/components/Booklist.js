@@ -10,7 +10,7 @@ import {
   Alert,
   ListGroup,
 } from "react-bootstrap";
-export const Booklist = () => {
+const Booklist = () => {
   const Book = (props) => {
     const { title, author, img, price } = props;
     return (
@@ -114,3 +114,5 @@ const Wrapper = styled.section`
   }
   ,
 `;
+
+export default Booklist;
