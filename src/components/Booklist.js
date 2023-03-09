@@ -26,16 +26,16 @@ const Booklist = () => {
           <ListGroup.Item>
             <FaDollarSign size={12} />
             {price}: Like New
-            <Button variant="primary" className="addButton">
+            {/* <Button variant="primary" className="addButton">
               add
-            </Button>
+            </Button> */}
           </ListGroup.Item>
           <ListGroup.Item>
             <FaDollarSign size={12} />
             {price}: Good
-            <Button variant="primary" className="addButton">
+            {/* <Button variant="primary" className="addButton">
               add
-            </Button>
+            </Button> */}
           </ListGroup.Item>
         </ListGroup>
       </Card>
@@ -43,6 +43,7 @@ const Booklist = () => {
   };
   return (
     <Wrapper>
+      <h3>Best Sellers</h3>
       <section className="booklist">
         {books.map((book) => {
           return <Book {...book} key={book.id} />;
@@ -67,6 +68,12 @@ const Wrapper = styled.section`
     .addButton{
       width: 40%
     }
+  h2{
+    width: 90vw;
+     margin: 5rem auto;
+     gap: 2rem;
+     color: blue;
+  }
   }
   // .book {
   //   background: #fff;

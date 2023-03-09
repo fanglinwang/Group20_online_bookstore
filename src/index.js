@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ProductsProvider } from "./context/products_context";
 import { UserProvider } from "./context/user_context";
-
+import { CartProvider } from "./context/cart_context";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Route, Routes, Router, BrowserRouter } from "react-router-dom";
@@ -19,22 +19,12 @@ import {
   SingleProduct,
   Cart,
 } from "./pages";
+
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Sidebar />
-      {/* <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/textbooks" element={<Textbooks />} />
-        <Route path="/products" element={<Products />}>
-          <Route path="id" element={<SingleProduct />} />
-        </Route>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/textbooks" element={<Textbooks />} />
@@ -57,7 +47,9 @@ root.render(
   <React.StrictMode>
     <UserProvider>
       <ProductsProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </ProductsProvider>
     </UserProvider>
   </React.StrictMode>

@@ -15,7 +15,7 @@ export const links = [
   },
   {
     id: 3,
-    text: "products",
+    text: "contact us",
     url: "/products",
   },
 ];
