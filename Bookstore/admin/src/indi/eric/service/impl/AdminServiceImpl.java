@@ -3,6 +3,8 @@ package indi.eric.service.impl;
 import indi.eric.dao.AdminDao;
 import indi.eric.dao.impl.AdminDaoImpl;
 import indi.eric.pojo.Admin;
+import indi.eric.pojo.Book;
+import indi.eric.pojo.Order;
 import indi.eric.service.AdminService;
 
 public class AdminServiceImpl implements AdminService{
@@ -31,6 +33,16 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public int deleteBook(int bookID, String bookName, String author) {
         return ad.deleteBook(bookID, bookName, author);
+    }
+
+    @Override
+    public Book queryBookByBookID(int bookID) {
+        return ad.queryBookByBookID(bookID);
+    }
+
+    @Override
+    public Order queryOrderByOrderID(int orderID) {
+        return ad.queryOrderByOrderID(orderID);
     }
 
 
