@@ -26,7 +26,6 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
-
   const {
     name,
     price,
@@ -37,35 +36,40 @@ const SingleProductPage = () => {
     id: sku,
     color,
     images,
+    image,
     company,
+    author,
   } = product;
-
+  // image = images[0];
+  console.log(image);
   return (
     <Wrapper>
       <PageHero title={name} product />
       <div className="section section-center page">
-        <Link to="/products" className="btn">
+        <Link to="/textbooks" className="btn">
           back to books
         </Link>
         <div className="product-center">
-          <ProductImages images={images} />
+          {/* <ProductImages images={images} /> */}
+          <img src={image} alt="main image" className="main" />
           <section className="content">
             <h2>{name}</h2>
             <Stars stars={stars} reviews={reviews} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
+              <span>Author : </span>
+              {author}
+            </p>
+            <p className="info">
               <span>Available : </span>
               {stock > 0 ? "in stock" : "out of stock"}
             </p>
-            <p className="info">
-              <span>SKU : </span>
-              {sku}
-            </p>
-            <p className="info">
-              <span>Brand : </span>
-              {company}
-            </p>
+            {/* <p className="info">
+              <span>Description : </span>
+              {description}
+            </p> */}
+
             <hr />
 
             {stock > 0 && <AddToCart product={product} />}
@@ -107,6 +111,15 @@ const Wrapper = styled.main`
     .price {
       font-size: 1.25rem;
     }
+  }
+  .main {
+    height: 600px;
+  }
+  img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
   }
 `;
 

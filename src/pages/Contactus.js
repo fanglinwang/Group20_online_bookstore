@@ -5,7 +5,7 @@ import { PageHero } from "../components";
 const Products = () => {
   return (
     <Wrapper>
-      <div>Products??????????</div>;
+      <div>Please email us: uwbook@gmail.com</div>
     </Wrapper>
   );
 };

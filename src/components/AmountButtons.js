@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
-const AmountButtons = (amount, increase, decrease) => {
+const AmountButtons = ({ amount, increase, decrease }) => {
   return (
     <Wrapper>
       <button onClick={decrease}>
@@ -18,7 +18,7 @@ const AmountButtons = (amount, increase, decrease) => {
 
 const Wrapper = styled.div`
   display: grid;
-  width: 140px;
+  width: 120px;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;

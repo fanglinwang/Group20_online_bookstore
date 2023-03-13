@@ -43,7 +43,7 @@ const AddToCart = ({ product }) => {
                   mainColor === color ? "color-btn active" : "color-btn"
                 }`}
               >
-                {" "}
+                <span className="cond">{color}</span>
                 {mainColor === color ? <FaCheck /> : null}{" "}
               </button>
             );
@@ -70,6 +70,9 @@ const AddToCart = ({ product }) => {
 
 const Wrapper = styled.section`
   margin-top: 2rem;
+  .cond {
+    color: #fff;
+  }
   .colors {
     display: grid;
     grid-template-columns: 125px 1fr;
@@ -85,9 +88,9 @@ const Wrapper = styled.section`
   }
   .color-btn {
     display: inline-block;
-    width: 1.5rem;
+    width: 4rem;
     height: 1.5rem;
-    border-radius: 50%;
+    border-radius: 75%;
     background: #222;
     margin-right: 0.5rem;
     border: none;

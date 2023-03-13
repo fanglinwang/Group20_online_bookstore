@@ -13,7 +13,7 @@ const CartButtons = () => {
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         <span className="cart-container">
           <BsCart4 />
-          <span className="cart-value">12</span>
+          <span className="cart-value">0</span>
           {/* <span className="icon-name">Cart</span> */}
         </span>
       </Link>

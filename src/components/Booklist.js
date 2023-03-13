@@ -54,6 +54,11 @@ const Booklist = () => {
 };
 
 const Wrapper = styled.section`
+h3{
+  // margin-left:19rem;
+  margin-top:3rem;
+   text-align: center;
+}
   .booklist {
     width: 90vw;
     max-width: 1170px;
@@ -75,14 +80,7 @@ const Wrapper = styled.section`
      color: blue;
   }
   }
-  // .book {
-  //   background: #fff;
-  //   border-radius: 1rem;
-  //   
-  //   text-align: center;
-  //   display: grid;
-  //   grid-template-columns: 1fr, 2fr;
-  // }
+ 
   .addButton{
     text-align: center;
     width: 100px;
