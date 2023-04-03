@@ -34,14 +34,13 @@ const SingleProductPage = () => {
     stars,
     reviews,
     id: sku,
-    color,
+    conditions,
     images,
     image,
     company,
     author,
   } = product;
   // image = images[0];
-  console.log(image);
   return (
     <Wrapper>
       <PageHero title={name} product />

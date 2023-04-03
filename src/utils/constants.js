@@ -52,3 +52,10 @@ export const books = [
 export const products_url = "/.netlify/functions/products";
 
 export const single_product_url = `/.netlify/functions/single-product?id=`;
+//localhost:8080/api/admin/books/recA6mTgmuC0ePnAZ
+
+//recA6mTgmuC0ePnAZ
+
+// export const products_url = "http://3.137.182.0:8080/api/admin/books";
+
+// export const single_product_url = `http://3.137.182.0:8080/api/admin/books/`;

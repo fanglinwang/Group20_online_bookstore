@@ -7,8 +7,8 @@ import AmountButtons from "./AmountButtons";
 
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
-  const { id, stock, colors } = product;
-  const [mainColor, setMainColor] = useState(colors[0]);
+  const { id, stock, conditions } = product;
+  const [mainCon, setMainCon] = useState(conditions[0]);
   const [amount, setAmount] = useState(1);
   const increase = () => {
     setAmount((oldAmount) => {
@@ -33,33 +33,33 @@ const AddToCart = ({ product }) => {
       <div className="colors">
         <span> conditions: </span>
         <div>
-          {colors.map((color, index) => {
+          {conditions.map((condition, index) => {
             return (
               <button
                 key={index}
-                style={{ background: color }}
-                onClick={() => setMainColor(color)}
+                style={{ background: condition }}
+                onClick={() => setMainCon(condition)}
                 className={`${
-                  mainColor === color ? "color-btn active" : "color-btn"
+                  mainCon === condition ? "color-btn active" : "color-btn"
                 }`}
               >
-                <span className="cond">{color}</span>
-                {mainColor === color ? <FaCheck /> : null}{" "}
+                <span className="cond">{condition}</span>
+                {mainCon === condition ? <FaCheck /> : null}{" "}
               </button>
             );
           })}
         </div>
-        {/* <div className="btn-container">
+        <div className="btn-container">
           <AmountButtons
             amount={amount}
             increase={increase}
             decrease={decrease}
           />
-        </div> */}
+        </div>
         <Link
           to="/cart"
           className="btn"
-          onClick={() => addToCart(id, mainColor, amount, product)}
+          onClick={() => addToCart(id, mainCon, amount, product)}
         >
           add to cart
         </Link>
@@ -109,6 +109,7 @@ const Wrapper = styled.section`
   }
   .btn-container {
     margin-top: 2rem;
+    width: 50px;
   }
 
   .btn {

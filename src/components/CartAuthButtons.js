@@ -3,17 +3,19 @@ import { BsCart4 } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useCartContext } from "../context/cart_context";
 import { useProductsContext } from "../context/products_context";
 import { useUserContext } from "../context/user_context";
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { currentUser, logout } = useUserContext();
+  const { total_items } = useCartContext();
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         <span className="cart-container">
           <BsCart4 />
-          <span className="cart-value">0</span>
+          <span className="cart-value">{total_items}</span>
           {/* <span className="icon-name">Cart</span> */}
         </span>
       </Link>
