@@ -10,20 +10,25 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/books")
+@RequestMapping("/api/user/books")
+@CrossOrigin
 public class BookController {
     @Autowired
     private BookService bookService;
     @GetMapping
-    public ResponseEntity<List<Book>> getAllMovies(){
+    public ResponseEntity<List<Book>> getAllBooks(){
         return new ResponseEntity<List<Book>>(bookService.allBooks(), HttpStatus.OK);
     }
-    @PostMapping("/searchByName")
+    @PostMapping("/searchbyname")
     public ResponseEntity<Optional<Book>> findBookByName(@RequestBody Map<String, String> payload){
         return new ResponseEntity<Optional<Book>>(bookService.singleBookByName(payload.get("name")), HttpStatus.OK);
     }
-//    @PostMapping("/searchByAuthor")
-//    public ResponseEntity<Optional<Book>> findBookByAuthor(String author){
-//        return new ResponseEntity<Optional<Book>>(bookService.singleBookByAuthor(author), HttpStatus.OK);
-//    }
+    @PostMapping("/searchbyauthor")
+    public ResponseEntity<Optional<Book>> findBookByAuthor(String author){
+        return new ResponseEntity<Optional<Book>>(bookService.singleBookByAuthor(author), HttpStatus.OK);
+    }
+    @PostMapping("/searchbyid")
+    public ResponseEntity<Optional<Book>> findBookById(String id){
+        return new ResponseEntity<Optional<Book>>(bookService.singleBookById(id), HttpStatus.OK);
+    }
 }

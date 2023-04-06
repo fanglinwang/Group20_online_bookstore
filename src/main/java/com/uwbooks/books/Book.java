@@ -19,9 +19,12 @@ public class Book {
     private ObjectId _id;
     private String id;
     private int price;
+    private String author;
+    private int stock;
+    private boolean featured;
     private String image;
     private String name;
-    private List<String> colors;
     private String description;
     private List<Image> images;
+    private List<String> conditions;
 }

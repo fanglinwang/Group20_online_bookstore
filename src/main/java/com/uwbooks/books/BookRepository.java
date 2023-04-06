@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface BookRepository extends MongoRepository<Book, ObjectId> {
     Optional<Book> findByName(String name);
     Optional<Book> findById(String id);
+    Optional<Book> findByAuthor(String author);
 }

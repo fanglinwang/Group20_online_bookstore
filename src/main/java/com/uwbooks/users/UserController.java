@@ -3,17 +3,15 @@ package com.uwbooks.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("/api/user")
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserService userService;
@@ -36,6 +34,6 @@ public class UserController {
         if (Objects.equals(payload.get("password"), userRepository.findByEmail(payload.get("email")).getEmail())) {
             return new ResponseEntity<User>(userRepository.findByEmail(payload.get("email")), HttpStatus.OK);
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: Invalid password!");
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error: Invalid password!");
     }
 }

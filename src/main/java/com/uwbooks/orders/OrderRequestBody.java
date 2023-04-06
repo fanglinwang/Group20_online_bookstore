@@ -14,7 +14,7 @@ import java.util.List;
 public class OrderRequestBody {
     private String email;
     private String address;
-    private String zipCode;
+    private String zipcode;
     private String cardNumber;
     private String cardName;
     private List<String> bookIds;

@@ -15,5 +15,5 @@ public class BookService {
     }
     public Optional<Book> singleBookByName(String name){ return bookRepository.findByName(name);}
     public Optional<Book> singleBookById(String id){ return bookRepository.findById(id);}
-//    public Optional<Book> singleBookByAuthor(String author){ return bookRepository.findByName(author);}
+    public Optional<Book> singleBookByAuthor(String author){ return bookRepository.findByAuthor(author);}
 }

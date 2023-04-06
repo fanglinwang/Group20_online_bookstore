@@ -23,22 +23,19 @@ public class Order {
     private String email;
     private String status;
     private String address;
-    private String zipCode;
+    private String zipcode;
     private String cardNumber;
     private String cardName;
     @DocumentReference
-    private User userId;
-    @DocumentReference
     private List<Book> bookIds;
 
-    public Order(String email, String status, String address, String zipCode, String cardNumber, String cardName, User userId, List<Book> bookIds) {
+    public Order(String email, String status, String address, String zipcode, String cardNumber, String cardName, List<Book> bookIds) {
         this.email = email;
         this.status = status;
         this.address = address;
-        this.zipCode = zipCode;
+        this.zipcode = zipcode;
         this.cardNumber = cardNumber;
         this.cardName = cardName;
-        this.userId = userId;
         this.bookIds = bookIds;
     }
 
