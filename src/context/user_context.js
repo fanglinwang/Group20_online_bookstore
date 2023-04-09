@@ -14,11 +14,14 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   async function createUser(user, url) {
     try {
-      const data = await fetch("http://3.137.182.0:8081/api/users/signup", {
+      const data = await fetch("http://3.137.182.0:8081/api/user/signup", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({
-          uid: user.uid,
+          // uid: user.uid,
           email: user.email,
           password: user.password,
         }),
