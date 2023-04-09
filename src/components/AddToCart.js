@@ -109,7 +109,7 @@ const Wrapper = styled.section`
   }
   .btn-container {
     margin-top: 2rem;
-    width: 50px;
+    // width: 100px;
   }
 
   .btn {

@@ -15,6 +15,9 @@ import Stars from "./Stars";
 import GridView from "./GridView";
 import Product from "./Product";
 import ProductList from "./ProductList";
+import BestDeals from "./BestDeals";
+import StripeCheckout from "./StripeCheckout";
+import CheckoutForm from "./CheckoutForm";
 export {
   Booklist,
   CartAuthButtons,
@@ -33,4 +36,7 @@ export {
   GridView,
   Product,
   ProductList,
+  BestDeals,
+  StripeCheckout,
+  CheckoutForm,
 };

@@ -12,6 +12,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -21,13 +22,14 @@ const Signup = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+
       history.push("/");
     } catch {
       setError("Failed to create an account");
-      // setError(error);
     }
     setLoading(false);
   }
+
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
@@ -40,6 +42,14 @@ const Signup = () => {
             {error && <Alert variant="danger">{error}</Alert>}
 
             <Form>
+              {/* <Form.Group className="mb-3" id="name">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control type="text" required />
+              </Form.Group>
+              <Form.Group className="mb-3" id="name">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control type="text" required />
+              </Form.Group> */}
               <Form.Group className="mb-3" id="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" ref={emailRef} required />
@@ -56,7 +66,12 @@ const Signup = () => {
                   required
                 />
               </Form.Group>
-              <Button disabled={loading} className="w-100 mt-2" type="submit">
+              <Button
+                disabled={loading}
+                className="w-100 mt-2"
+                variant="dark"
+                type="submit"
+              >
                 Sign up
               </Button>
             </Form>

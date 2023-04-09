@@ -3,15 +3,7 @@ import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaDollarSign } from "react-icons/fa";
-import {
-  Form,
-  Card,
-  Button,
-  Container,
-  Alert,
-  ListGroup,
-} from "react-bootstrap";
+
 const Product = ({ image, name, price, id }) => {
   return (
     <Wrapper>
@@ -32,9 +24,9 @@ const Product = ({ image, name, price, id }) => {
 const Wrapper = styled.article`
   .container {
     position: relative;
-    background: var(--clr-black);
+    // background: var(--clr-black);
     border-radius: var(--radius);
-    margin: 5rem, auto;
+    margin: 2rem, auto;
   }
   img {
     width: 100%;

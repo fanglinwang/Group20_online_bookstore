@@ -47,7 +47,12 @@ const Login = () => {
               </Form.Group>
 
               <Link>Forget Password?</Link>
-              <Button disabled={loading} className="w-100 mt-3" type="submit">
+              <Button
+                disabled={loading}
+                className="w-100 mt-3"
+                variant="dark"
+                type="submit"
+              >
                 Log in
               </Button>
             </Form>
