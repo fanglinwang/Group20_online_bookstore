@@ -5,7 +5,6 @@ import AmountButtons from "./AmountButtons";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 const CartItem = ({ id, image, name, condition, price, amount }) => {
-  console.log(condition);
   const { removeItem, toggleAmount } = useCartContext();
   const increase = () => {
     toggleAmount(id, "inc");
@@ -68,7 +67,7 @@ const Wrapper = styled.article`
     height: 100%;
     display: block;
     border-radius: var(--radius);
-    object-fit: cover;
+    object-fit: contain;
   }
   h5 {
     font-size: 0.75rem;

@@ -32,13 +32,15 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <div className="search-btn">
+          {/* <div className="search-btn">
             <input type="search" />
             <button>
               <BiSearch />
             </button>
+          </div> */}
+          <div className="cartButton">
+            <CartButtons />
           </div>
-          <CartButtons />
         </div>
       </nav>
     </NavContainer>
@@ -52,6 +54,9 @@ const NavContainer = styled.nav`
   a:-webkit-any-link {
     text-decoration: none;
     cursor: pointer;
+  }
+  .cartButton {
+    text-align: right;
   }
   .nav-center {
     width: 90vw;
@@ -92,7 +97,7 @@ const NavContainer = styled.nav`
     }
     .nav-center {
       display: grid;
-      grid-template-columns: auto 1fr 1fr auto;
+      grid-template-columns: 1fr 4fr 1fr;
       align-items: center;
     }
     .nav-links {

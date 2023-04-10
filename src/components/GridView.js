@@ -18,12 +18,13 @@ const GridView = ({ products }) => {
 
 const Wrapper = styled.section`
   img {
-    height: 350px;
+    height: 400px;
   }
 
   .products-container {
     display: grid;
     gap: 2rem 1.5rem;
+    margin: 20px 40px;
   }
 
   @media (min-width: 992px) {
@@ -33,7 +34,7 @@ const Wrapper = styled.section`
   }
   @media (min-width: 1170px) {
     .products-container {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 `;

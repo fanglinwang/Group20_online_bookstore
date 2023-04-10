@@ -8,15 +8,20 @@ export const links = [
     text: "home",
     url: "/",
   },
-  {
-    id: 2,
-    text: "textbooks",
-    url: "/textbooks",
-  },
+  // {
+  //   id: 2,
+  //   text: "books",
+  //   url: "/textbooks",
+  // },
   {
     id: 3,
+    text: "add book",
+    url: "/addbook",
+  },
+  {
+    id: 4,
     text: "contact us",
-    url: "/products",
+    url: "/contactus",
   },
 ];
 

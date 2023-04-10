@@ -26,21 +26,22 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
+
   const {
     name,
     price,
     description,
     stock,
-    stars,
+    star,
     reviews,
     id: sku,
     conditions,
-    images,
     image,
     company,
     author,
   } = product;
   // image = images[0];
+
   return (
     <Wrapper>
       <PageHero title={name} product />
@@ -53,7 +54,7 @@ const SingleProductPage = () => {
           <img src={image} alt="main image" className="main" />
           <section className="content">
             <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews} />
+            <Stars stars={star} reviews={reviews} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
@@ -112,13 +113,15 @@ const Wrapper = styled.main`
     }
   }
   .main {
-    height: 600px;
+    height: 650px;
   }
   img {
     width: 100%;
     display: block;
     border-radius: var(--radius);
-    object-fit: cover;
+    object-fit: contain;
+    max-width: 100%;
+    height: 100%;
   }
 `;
 

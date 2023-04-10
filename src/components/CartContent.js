@@ -50,6 +50,7 @@ const Wrapper = styled.section`
     letter-spacing: var(--spacing);
     font-weight: 400;
     cursor: pointer;
+    text-decoration: none;
   }
   .clear-btn {
     background: var(--clr-black);

@@ -7,7 +7,8 @@ import Profile from "./Profile";
 import Signup from "./Signup";
 import SingleProduct from "./SingleProduct";
 import Textbooks from "./Textbooks";
-
+import AddBook from "./AddBook";
+import Contactus from "./Contactus";
 export {
   Cart,
   Checkout,
@@ -18,4 +19,6 @@ export {
   Signup,
   SingleProduct,
   Textbooks,
+  AddBook,
+  Contactus,
 };

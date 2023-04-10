@@ -30,6 +30,7 @@ const Wrapper = styled.article`
   }
   img {
     width: 100%;
+    // height: 100%
     display: block;
     object-fit: cover;
     border-radius: var(--radius);
@@ -62,15 +63,19 @@ const Wrapper = styled.article`
     opacity: 1;
   }
   footer {
-    margin-top: 1rem;
+    margin: 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
   }
   footer h5,
   footer p {
     margin-bottom: 0;
     font-weight: 400;
+    font-size: 15px;
+    font-weight: bold;
   }
 
   footer p {

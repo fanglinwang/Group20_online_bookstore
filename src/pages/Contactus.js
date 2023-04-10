@@ -56,57 +56,88 @@ const Contactus = () => {
   }
 
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "85vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "450px" }}>
-        <Card onSubmit={handleSubmit}>
-          <Card.Body>
-            <h2 className="text-center mb-3">Add Books</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
+    <Wrapper>
+      <div className="contact-us">
+        <h2>Contact Us</h2>
+        <p>
+          Thank you for your interest in our products/services. We appreciate
+          your feedback and would love to hear from you.
+        </p>
+        <p>
+          Please feel free to contact us using the information provided below:
+        </p>
 
-            <Form>
-              <Form.Group className="mb-3" id="email">
-                <Form.Label>Book Name</Form.Label>
-                <Form.Control type="text" ref={bookNameRef} required />
-              </Form.Group>
-              <Form.Group className="mb-3" id="price">
-                <Form.Label>Price</Form.Label>
-                <Form.Control type="text" ref={priceRef} required />
-              </Form.Group>
+        <form>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" required />
 
-              <Form.Group className="mb-3" id="password">
-                <Form.Label>Author</Form.Label>
-                <Form.Control type="text" ref={authorRef} required />
-              </Form.Group>
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" required />
 
-              <Form.Group className="mb-3" id="exampleDataList">
-                <Form.Label>Condition</Form.Label>
-                <Form.Control type="text" ref={conRef} required />
-              </Form.Group>
-              {/* <Form.Group className="mb-3" id="password-confirm">
-                <Form.Label>Images</Form.Label>
-                <Form.Control type="file" multiple />
-              </Form.Group> */}
-              <Form.Group className="mb-3" id="password-confirm">
-                <Form.Label>Images</Form.Label>
-                <Form.Control type="text" ref={imageRef} multiple />
-              </Form.Group>
-              <Button
-                disabled={loading}
-                className="w-100 mt-2"
-                variant="dark"
-                type="submit"
-              >
-                ADD
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" required />
+
+          <button type="submit">Submit</button>
+        </form>
       </div>
-    </Container>
+    </Wrapper>
   );
 };
+const Wrapper = styled.main`
+  // background-image: url("https://images.unsplash.com/photo-1522781063645-d5e4fb3e19aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80");
+  margin-bottom: 40px;
+  .contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    // width: 1400px;
+  }
 
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  form {
+    width: 1500px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  button[type="submit"] {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+`;
 export default Contactus;

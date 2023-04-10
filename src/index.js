@@ -18,7 +18,11 @@ import {
   Checkout,
   SingleProduct,
   Cart,
+  AddBook,
+  Contactus,
 } from "./pages";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
   return (
@@ -30,12 +34,13 @@ function App() {
         <Route path="/textbooks" element={<Textbooks />} />
         <Route path="/products" element={<Products />} />
         <Route path="/textbooks/:id" element={<SingleProduct />} />
-
+        <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/addbook" element={<AddBook />} />
+        <Route path="/contactus" element={<Contactus />} />
       </Routes>
 
       <Footer />
@@ -43,12 +48,22 @@ function App() {
   );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const stripe = loadStripe(process.env.REACT_APP_AUTH_STRIPE_PUBLIC_KEY);
+const options = {
+  // Fully customizable with appearance API.
+  appearance: {
+    /*...*/
+  },
+};
+
 root.render(
   <React.StrictMode>
     <UserProvider>
       <ProductsProvider>
         <CartProvider>
-          <App />
+          <Elements stripe={stripe} options={options}>
+            <App />
+          </Elements>
         </CartProvider>
       </ProductsProvider>
     </UserProvider>

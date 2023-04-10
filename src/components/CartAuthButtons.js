@@ -21,7 +21,7 @@ const CartButtons = () => {
       </Link>
       {currentUser ? (
         <Link to="/profile" className="auth-btn">
-          <span className="icon-name">{currentUser.email}</span>
+          <span className="icon-name">Hello! Simon</span>
         </Link>
       ) : (
         <Link to="/login" className="auth-btn">
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
-  width: 100px;
+  width: 200px;
   margin-top: -10px;
 
   .cart-btn {

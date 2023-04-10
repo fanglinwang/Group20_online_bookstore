@@ -42,14 +42,14 @@ const Signup = () => {
             {error && <Alert variant="danger">{error}</Alert>}
 
             <Form>
-              {/* <Form.Group className="mb-3" id="name">
+              <Form.Group className="mb-3" id="name">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control type="text" required />
               </Form.Group>
               <Form.Group className="mb-3" id="name">
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control type="text" required />
-              </Form.Group> */}
+              </Form.Group>
               <Form.Group className="mb-3" id="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" ref={emailRef} required />
