@@ -1,5 +1,5 @@
 # Getting Started with UWbook
-<img width="532" alt="Screenshot 2023-04-10 at 12 27 33 AM" src="https://user-images.githubusercontent.com/75677869/230901470-20fb6c59-65e8-45f1-95b8-cd740565f61d.png">
+<img width="1241" alt="Screenshot 2023-04-10 at 8 28 21 AM" src="https://user-images.githubusercontent.com/75677869/230901594-7151a474-0124-4224-8f63-d845755dc66a.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
